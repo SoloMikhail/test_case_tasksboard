@@ -1,3 +1,4 @@
+<h2>Welcome to the TasksBoard</h2>
 <% if user_signed_in? %>
     <span>Здравствуйте, <%= current_user.email %></span>
     <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
