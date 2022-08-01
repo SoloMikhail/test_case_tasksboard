@@ -77,3 +77,7 @@ gem "ruby-lsp", "~> 0.0.4", :group => :development
 #bootstrap 5.1.3 https://github.com/twbs/bootstrap-rubygem
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
+
+#bootstrap for devise
+gem "devise-i18n"
+gem "devise-bootstrap5"

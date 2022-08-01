@@ -1,10 +1,20 @@
 <h2>Welcome to the TasksBoard</h2>
 <% if user_signed_in? %>
     <span>Здравствуйте, <%= current_user.email %></span>
-    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+    <%= link_to 'Выйти', destroy_user_session_path,
+    class: "btn btn-large btn-primary", :method => :delete %>
 <% else %>
-    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+    <%= link_to 'Войти', new_user_session_path,
+    class: "btn btn-large btn-primary" %> или
+    <%= link_to 'Зарегистрироваться', new_user_registration_path , class: "btn btn-large btn-primary"%>
 <% end %>
+<div class="center hero-unit">
+    <h3>
+    This is the home page
+    <a href="https://github.com/SoloMikhail/test_case_tasksboard">Ruby on Rails My frirst job.
+  </h3>
+</div>
+
 
 
 <p class="notice"><%= notice %></p>
