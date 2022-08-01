@@ -4,6 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #device auth-gem
 gem 'devise'
 
+#bootstrap for devise
+gem "devise-i18n"
+gem "devise-bootstrap5"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
 
@@ -78,6 +82,4 @@ gem "ruby-lsp", "~> 0.0.4", :group => :development
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 
-#bootstrap for devise
-gem "devise-i18n"
-gem "devise-bootstrap5"
+
