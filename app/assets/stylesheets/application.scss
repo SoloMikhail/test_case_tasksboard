@@ -16,6 +16,8 @@
 
 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
+
+ /*Align center for devise form */
  .row {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -26,4 +28,38 @@
     justify-content: space-around;
     flex-wrap: nowrap;
   }
+
+  /* footer */
+
+footer {
+  display: flex;
+  margin-top: 80px;
+  padding-top: 10px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  justify-content: space-around;
+
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
 @import "bootstrap";

@@ -1,13 +1,6 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-#device auth-gem
-gem 'devise'
-
-#bootstrap for devise
-gem "devise-i18n"
-gem "devise-bootstrap5"
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
 
@@ -84,3 +77,10 @@ gem 'jquery-rails'
 
 #Migration to MySql
 gem 'yaml_db'
+
+#device auth-gem
+gem 'devise'
+
+#bootstrap for devise
+gem "devise-i18n"
+gem "devise-bootstrap5"
