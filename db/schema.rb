@@ -11,12 +11,12 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_08_04_132434) do
-  create_table "mtasks", charset: "utf8mb3", force: :cascade do |t|
+  create_table "jobs", charset: "utf8mb3", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.text "status"
-    t.date "start_date"
-    t.date "due_date"
+    t.datetime "start_date"
+    t.datetime "due_date"
     t.integer "estimation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

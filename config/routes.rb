@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  get '/tasks', to: 'tasks#index'
+
+  resources :jobs
+
   root 'homepage#index'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

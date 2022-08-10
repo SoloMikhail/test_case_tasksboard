@@ -84,3 +84,7 @@ gem 'devise'
 #bootstrap for devise
 gem "devise-i18n"
 gem "devise-bootstrap5"
+
+# Debug
+# gem debug
+#gem 'pry-byebug', '~> 3.8'

@@ -1,0 +1,18 @@
+<h1><%= @job.title %></h1>
+
+<p>
+  <br>
+  <%= @job.content%>
+  <br>
+  <%= @job.status%>
+  <br>
+  <%= @job.estimation%>
+  <br>
+  <%= @job.start_date%>
+  <br>
+  <%= @job.due_date%>
+  <br>
+    <time datetime="<%= @job.formated_created_at %>">
+    <%= @job.formated_created_at %>
+    </time>
+</p>
