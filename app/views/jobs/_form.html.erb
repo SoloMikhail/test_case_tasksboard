@@ -16,7 +16,7 @@
 
   <div>
     <%= f.label :estimation %>
-    <%= f.number_field :estimation, numericality: { only_integer: true }, required: true,
+    <%= f.number_field :estimation, in:1..100, step: 1, numericality: { only_integer: true }, required: true,
     minlength: 1, placeholder: "Estimation task " %>
   </div>
 
