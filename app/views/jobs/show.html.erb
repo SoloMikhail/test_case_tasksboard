@@ -1,18 +1,31 @@
-<h1><%= @job.title %></h1>
+<h2 class="mb-4"><%= @job.title %></h2>
 
-<p>
-  <br>
-  <%= @job.content%>
-  <br>
-  <%= @job.status%>
-  <br>
-  <%= @job.estimation%>
-  <br>
-  <%= @job.start_date%>
-  <br>
-  <%= @job.due_date%>
-  <br>
-    <time datetime="<%= @job.formated_created_at %>">
-    <%= @job.formated_created_at %>
-    </time>
+<time datetime="<%= @job.formated_created_at %>">
+  <small><%= @job.formated_created_at %></small>
+</time>
+
+<p class="lead my-3">
+  <%= @job.content %>
 </p>
+
+<p class="my-2">
+  <%= @job.status%>
+</p>
+
+<p class="my-2">
+  <%= @job.estimation%>
+</p>
+
+<p class="my-2">
+  <%= @job.start_date%>
+</p>
+
+<p class="my-2">
+  <%= @job.due_date%>
+</p>
+
+<%= link_to 'Show', job_path(@job), class: 'btn btn-primary' %>
+<%= link_to 'Edit', edit_job_path(@job), class: 'btn btn-secondary' %>
+<%= link_to "Destroy", job_path(@job), class: 'btn btn-danger', data: {
+                                      turbo_method: :delete,
+                                      turbo_confirm: "Are you sure?"} %>

@@ -1,34 +1,65 @@
+<% @job.errors.full_messages %>
+
+<%= render 'shared/errors', object: @job %>
+
+
 <%= form_with model: @job do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title, required: true, minlength: 2, placeholder: 'Title' %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :title %>
+    </div>
+    <div class="col-sm-10">
+      <%= f.text_field :title, required: true, minlength: 2, placeholder: 'Title', class: 'form-control' %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :content %>
-    <%= f.text_area :content, required: true, minlength: 2, placeholder: 'Content' %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :content %>
+    </div>
+    <div class="col-sm-10">
+      <%= f.text_area :content, required: true, minlength: 5, placeholder: 'Content', class: 'form-control' %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :status %>
-    <%= f.text_field :status, required: true, minlength: 2, placeholder: 'Status task' %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :status %>
+    </div>
+    <div class="col-sm-10">
+      <%= f.text_field :status, required: true, minlength: 2, placeholder: 'Status task', class: 'form-control' %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :estimation %>
-    <%= f.number_field :estimation, in:1..100, step: 1, numericality: { only_integer: true }, required: true,
-    minlength: 1, placeholder: "Estimation task " %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :estimation %>
+    </div>
+    <div class="col-sm-10">
+      <%= f.number_field :estimation, in:1..100, step: 1, numericality: { only_integer: true }, required: true,
+          minlength: 1, placeholder: "Estimation task ", class: 'form-control' %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :start_date %>
-    <%= f.datetime_field :start_date, required: true,  placeholder: "StartDate task " %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :start_date %>
+     </div>
+    <div class="col-sm-10">
+      <%= f.datetime_field :start_date, required: true,  placeholder: "StartDate task", class: 'form-control'  %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :due_date %>
-    <%= f.datetime_field :due_date, required: true,  placeholder: "Enddate task " %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :due_date %>
+    </div>
+    <div class="col-sm-10">
+      <%= f.datetime_field :due_date, required: true,  placeholder: "Enddate task", class: 'form-control' %>
+    </div>
   </div>
 
-  <%= f.submit "Submit task!" %>
+  <div class="mb-3 row">
+    <%= f.submit "Submit task!", class: 'btn btn-primary' %>
+  </div>
   <% end %>

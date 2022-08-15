@@ -1,31 +1,44 @@
-<h1>Tasks</h1>
+<h2 class="mb-4">Tasks</h2>
+
+<%= link_to 'New task', new_job_path, class: 'btn btn-primary btn-lg' %>
 
 <% @jobs.each do |job| %>
-  <h2> <%= job.title  %> </h2>
+  <article class="card mt-3">
+    <div class="card-body">
+      <h4><%= job.title %></h2>
 
-  <h4> <%= job.content%> </h4>
+      <section class="card-text">
+        <time datetime="<%= job.formated_created_at %>">
+          <small><%= job.formated_created_at %></small>
+        </time>
 
-  <h4> <%= job.status%> </h4>
+        <p class="my-2">
+          <%= job.content%>
+        </p>
 
-  <h4> <%= job.estimation%> </h4>
+        <p class="my-2">
+          <%= job.status%>
+        </p>
 
-  <h4> <%= job.start_date%> </h4>
+        <p class="my-2">
+          <%= job.estimation%>
+        </p>
 
-  <h4> <%= job.due_date%> </h4>
+        <p class="my-2">
+          <%= job.start_date%>
+        </p>
 
-  <time datetime="<%= job.formated_created_at %>">
-    <%= job.formated_created_at %>
-    </time>
+        <p class="my-2">
+          <%= job.due_date%>
+        </p>
+       </section>
 
-  <p>
-    <%= job.content%>
-    <br>
-    <%= link_to 'New', new_job_path(job) %> |
-    <%= link_to 'Show', job_path(job) %> |
-    <%= link_to 'Edit', edit_job_path(job) %> |
-    <%= link_to "Destroy", job_path(job), data: {
+    <%= link_to 'Show', job_path(job), class: 'btn btn-primary' %>
+    <%= link_to 'Edit', edit_job_path(job), class: 'btn btn-secondary' %>
+    <%= link_to "Destroy", job_path(job), class: 'btn btn-danger', data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %>
-  </p>
+    </div>
+  </article>
 <% end %>

@@ -14,6 +14,7 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     if @job.save
+      flash[:success] = "Task created!"
       redirect_to jobs_path
       else
         render :new
@@ -27,6 +28,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update(job_params)
+      flash[:success] = "Task update!"
       redirect_to jobs_path
       else
         render :edit
@@ -36,6 +38,7 @@ class JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
+    flash[:success] = "Task deleted!"
     redirect_to jobs_path
   end
 
