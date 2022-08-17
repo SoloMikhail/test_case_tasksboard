@@ -1,0 +1,46 @@
+<% @project.errors.full_messages %>
+
+<%= render 'shared/errors', object: @project %>
+
+
+<%= form_with model: @project do |f| %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :name %>
+    </div>
+    <div class="col-sm-10">
+      <%= f.text_field :name, required: true, minlength: 2, placeholder: 'Name', class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :summary %>
+    </div>
+    <div class="col-sm-10">
+      <%= f.text_area :summary, required: true, minlength: 5, placeholder: 'Summary', class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :start_date %>
+     </div>
+    <div class="col-sm-10">
+      <%= f.datetime_field :start_date, required: true, placeholder: "StartDate task", class: 'form-control'  %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :due_date %>
+    </div>
+    <div class="col-sm-10">
+      <%= f.datetime_field :due_date, required: true,  placeholder: "Enddate task", class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <%= f.submit "Submit task!", class: 'btn btn-primary' %>
+  </div>
+  <% end %>

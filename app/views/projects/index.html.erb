@@ -1,0 +1,36 @@
+<h2 class="mb-4">Projects</h2>
+
+<%= link_to 'New Project', new_project_path, class: 'btn btn-primary btn-lg' %>
+
+<% @projects.each do |project| %>
+  <article class="card mt-3">
+    <div class="card-body">
+      <h4><%= project.name %></h2>
+
+      <section class="card-text">
+        <time datetime="<%= project.formated_created_at %>">
+          <%= project.formated_created_at %>
+        </time>
+
+        <p class="my-2">
+          <%= project.summary%>
+        </p>
+
+        <p class="my-2">
+          <%= project.start_date%>
+        </p>
+
+        <p class="my-2">
+          <%= project.due_date%>
+        </p>
+       </section>
+
+    <%= link_to 'Show', project_path(project), class: 'btn btn-primary' %>
+    <%= link_to 'Edit', edit_project_path(project), class: 'btn btn-secondary' %>
+    <%= link_to "Destroy", project_path(project), class: 'btn btn-danger', data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+    </div>
+  </article>
+<% end %>

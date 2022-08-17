@@ -85,6 +85,9 @@ gem 'devise'
 gem "devise-i18n"
 gem "devise-bootstrap5"
 
+#validate Date
+gem 'date_validator'
+
 # Debug
 # gem debug
 #gem 'pry-byebug', '~> 3.8'
