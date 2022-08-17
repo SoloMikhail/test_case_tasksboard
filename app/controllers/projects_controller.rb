@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
   def show
     @job = @project.jobs.build
-    @jobs = Job.order created_at: :desc
+    @jobs = @project.jobs.order created_at: :desc
 
   end
 
@@ -49,6 +49,6 @@ private
   end
 
   def set_project!
-    @project = Project.find params[:id]
+    @project = Project.find(params[:id])
   end
 end

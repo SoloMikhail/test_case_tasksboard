@@ -18,9 +18,7 @@
 
 <%= link_to 'Show', project_path(@project), class: 'btn btn-primary' %>
 <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-secondary' %>
-<%= link_to "Destroy", project_path(@project), class: 'btn btn-danger', data: {
-                                      turbo_method: :delete,
-                                      turbo_confirm: "Are you sure?"} %>
+
 
 <hr class="my-3">
 
@@ -102,10 +100,9 @@
       <%= job.content %>
     </p>
 
-    <%= link_to 'Delete', project_job_path(@project, job),
-                          class: 'btn btn-danger', data: {
-                                  turbo_method: :delete,
-                                  turbo_confirm: "Are you sure?"} %>
+
+<%= button_to 'Delete', project_job_path(@project, job), class: 'btn btn-danger', method: :delete %>
+
 
   </article>
 <% end %>

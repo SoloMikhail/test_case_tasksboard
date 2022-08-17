@@ -1,5 +1,6 @@
 class Job < ApplicationRecord
   belongs_to :project
+
   validates :title, presence: true, length: {minimum:2};
   validates :content, presence: true, length: {minimum:5, maximum:1000 };
   validates :status, presence: true, length: {minimum:1};

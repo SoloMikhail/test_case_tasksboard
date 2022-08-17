@@ -14,7 +14,7 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    job = @project.jobs.find params[:id]
+    job = @project.jobs.find(params[:id])
     job.destroy
     flash[:success] = "Task deleted!"
     redirect_to project_path(@project)
@@ -26,6 +26,6 @@ class JobsController < ApplicationController
   end
 
   def set_project!
-    @project = Project.find params[:project_id]
+    @project = Project.find(params[:project_id])
   end
 end
